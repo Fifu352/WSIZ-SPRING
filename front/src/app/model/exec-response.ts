@@ -1,6 +1,6 @@
 export class ExecResponse {
-  command: string;
-  args: string;
-  ouput: string[];
-  error: string[];
+    command: string;
+    args: string;
+    ouput: string[];
+    error: string[];
 }

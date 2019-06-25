@@ -1,9 +1,22 @@
 package wsi.wykop;
 
-import java.io.IOException;
-
 public class ExceptionHandling {
 
+
+    public static void main(String[] args) {
+        ExceptionHandling g = new ExceptionHandling();
+
+
+        try {
+            System.out.println(g.function1());
+        } catch (IllegalArgumentException e) {
+            System.out.println("dziwny argument " + e);
+        } catch (RuntimeException e) {
+            System.out.println("wystąpił błąd: " + e);
+        }
+
+
+    }
 
     String readFile(String filename) {
         //czytaj zawartosc pliku "filename"
@@ -20,7 +33,6 @@ public class ExceptionHandling {
         return res;
     }
 
-
     String function2() {
         System.out.println("start function2");
         String res = readFile("hack.txt");
@@ -34,21 +46,5 @@ public class ExceptionHandling {
         System.out.println("end function1");
 
         return res;
-    }
-
-
-    public static void main(String[] args) {
-        ExceptionHandling g = new ExceptionHandling();
-
-
-        try {
-            System.out.println(g.function1());
-        } catch (IllegalArgumentException e) {
-            System.out.println("dziwny argument " + e);
-        } catch (RuntimeException e) {
-            System.out.println("wystąpił błąd: " + e);
-        }
-
-
     }
 }

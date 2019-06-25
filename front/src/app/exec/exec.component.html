@@ -1,31 +1,31 @@
-<div class="row">
-  <div class="col-md-4">
-    <div class="card">
-      <div class="card-header">Klucz</div>
-      <div class="card-body form-group">
+<div class="row mt-2">
+    <div class="col-md-4">
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">Klucz</div>
+            <div class="card-body form-group">
 
-        <input type="password" class="form-control" [(ngModel)]="adminpass">
+                <input [(ngModel)]="adminpass" class="form-control" type="password">
 
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">Komendy</div>
-      <div class="card-body form-group">
-        <input type="text" class="form-control" [(ngModel)]="command">
-        <button class="btn btn-success mt-3" (click)="executeCommand()"> Run command </button>
-
-      </div>
-    </div>
-  </div>
-  <div class="col-md-8">
-      <div class="card">
-        <div class="card-header">Wynik</div>
-        <div class="card-body">
-          <pre *ngFor="let g of output">{{g}}</pre>
+            </div>
         </div>
-      </div>
-  </div>
+
+        <div class="card text-white bg-dark mb-3 " >
+            <div class="card-header">Komendy</div>
+            <div class="card-body form-group">
+                <input [(ngModel)]="command" class="form-control" type="text">
+                <button (click)="executeCommand()" class="btn btn-success mt-3"> Run command</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">Wynik</div>
+            <div class="card-body ">
+                <pre class="text-white" *ngFor="let g of output">{{g}}</pre>
+            </div>
+        </div>
+    </div>
 
 
 </div>

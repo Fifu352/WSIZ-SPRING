@@ -11,10 +11,6 @@ import wsi.model.Person;
 import wsi.service.ExecService;
 import wsi.service.UserService;
 
-import java.util.List;
-
-import static java.net.URLDecoder.decode;
-
 
 @RestController
 @CrossOrigin
@@ -26,8 +22,10 @@ public class AlphaController implements InitializingBean {
     @Value("${admin.password:123}")
     String passwd;
 
-    @Autowired UserService userService;
-    @Autowired ExecService execService;
+    @Autowired
+    UserService userService;
+    @Autowired
+    ExecService execService;
 
 
     @Override
@@ -60,8 +58,6 @@ public class AlphaController implements InitializingBean {
     public Person addUser(@RequestBody Person p) {
         return userService.addUser(p);
     }
-
-
 
 
 }
