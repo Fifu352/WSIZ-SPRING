@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div class="card text-white bg-dark mb-3 " >
+        <div class="card text-white bg-dark mb-3 ">
             <div class="card-header">Komendy</div>
             <div class="card-body form-group">
                 <input [(ngModel)]="command" class="form-control" type="text">
@@ -22,7 +22,13 @@
         <div class="card text-white bg-dark mb-3">
             <div class="card-header">Wynik</div>
             <div class="card-body ">
-                <pre class="text-white" *ngFor="let g of output">{{g}}</pre>
+                <ng-container *ngIf="errors.length<1">
+                    <pre class="text-white" *ngFor="let g of output">{{g}}</pre>
+                </ng-container>
+
+                <ng-container *ngIf="errors.length>0">
+                    <pre class="text-white" *ngFor="let g of errors">{{g}}</pre>
+                </ng-container>
             </div>
         </div>
     </div>

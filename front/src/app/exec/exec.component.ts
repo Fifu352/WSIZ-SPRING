@@ -29,6 +29,8 @@ export class ExecComponent implements OnInit {
 
     executeCommand() {
         let url = this.host + `?pass=${this.adminpass}&cmd=${this.command}`;
+        console.log(this.command);
+        console.log(url);
         this.http.get<ExecResponse>(url).subscribe(res => {
             this.output = res.ouput;
             this.errors = res.error;

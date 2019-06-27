@@ -5,10 +5,30 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a [routerLink]="['/exec']" class="nav-link"
-                   href="#"  routerLinkActive="active" >Commands
+                                            href="#" routerLinkActive="active">Commands
+                    <span class="sr-only">(contact)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/monitor']" class="nav-link"
+                                               href="#" routerLinkActive="active">Monitor
+                    <span class="sr-only">(contact)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+            <a [routerLink]="['/finder']" class="nav-link"
+                                           href="#" routerLinkActive="active">TaskKiller
+                <span class="sr-only">(contact)</span>
+            </a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/schedule']" class="nav-link"
+                                              href="#" routerLinkActive="active">Schedule
                     <span class="sr-only">(contact)</span>
                 </a>
             </li>
         </ul>
     </div>
+
+
 </nav>

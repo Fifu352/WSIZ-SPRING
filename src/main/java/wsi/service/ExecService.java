@@ -1,5 +1,6 @@
 package wsi.service;
 
+import org.springframework.aop.scope.ScopedObject;
 import org.springframework.stereotype.Service;
 import wsi.model.ExecResponse;
 
@@ -21,6 +22,7 @@ public class ExecService {
         try {
             String s = "";
             Process p = Runtime.getRuntime().exec(command);
+
             BufferedReader stdInput = new BufferedReader(new
                     InputStreamReader(p.getInputStream()));
 
