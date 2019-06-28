@@ -6,6 +6,7 @@ import {ExecComponent} from "./exec/exec.component";
 import {MonitorComponent} from "./monitor/monitor.component";
 import {FinderComponent} from "./finder/finder.component";
 import {ScheduleComponent} from "./schedule/schedule.component";
+import {PasswordComponent} from "./password/password.component";
 
 const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path: 'monitor', component: MonitorComponent},
     {path: 'finder', component: FinderComponent},
     {path: 'schedule', component: ScheduleComponent},
+    {path: 'password', component: PasswordComponent},
 ];
 
 @NgModule({

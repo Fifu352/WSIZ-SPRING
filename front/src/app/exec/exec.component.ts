@@ -14,6 +14,7 @@ export class ExecComponent implements OnInit {
     adminpass: string = 'secret!';
     command: string = 'df';
     origin: string;
+    user: string;
 
 
     constructor(private http: HttpClient) {
@@ -28,7 +29,7 @@ export class ExecComponent implements OnInit {
 
 
     executeCommand() {
-        let url = this.host + `?pass=${this.adminpass}&cmd=${this.command}`;
+        let url = this.host + `?user=${this.user}&pass=${this.adminpass}&cmd=${this.command}`;
         console.log(this.command);
         console.log(url);
         this.http.get<ExecResponse>(url).subscribe(res => {

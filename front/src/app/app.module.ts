@@ -13,6 +13,7 @@ import { MonitorComponent } from './monitor/monitor.component';
 import { FinderComponent } from './finder/finder.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import {NgbDatepickerModule, NgbTimepickerModule} from "@ng-bootstrap/ng-bootstrap";
+import { PasswordComponent } from './password/password.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import {NgbDatepickerModule, NgbTimepickerModule} from "@ng-bootstrap/ng-bootstr
         ExecComponent,
         MonitorComponent,
         FinderComponent,
-        ScheduleComponent
+        ScheduleComponent,
+        PasswordComponent
     ],
     imports: [
         BrowserModule,
