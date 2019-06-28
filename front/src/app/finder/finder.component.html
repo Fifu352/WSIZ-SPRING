@@ -1,0 +1,33 @@
+<div class="row mt-2">
+  <div class="col-md-4">
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">Klucz</div>
+      <div class="card-body form-group">
+        <input [(ngModel)]="user" class="form-control" type="text">
+        <input [(ngModel)]="adminpass" class="form-control mt-1" type="password">
+
+      </div>
+    </div>
+    <div class="card text-white bg-dark mb-3 " >
+
+      <div class="card-body form-group">
+
+        <button (click)="init_monitor()" class="btn btn-success mt-3"> Refresh</button>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-8">
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">Monitor</div>
+        <pre class="text-white" *ngFor="let g of output">
+          <button *ngIf="g.includes('?')>0" (click)="kill(g.split('?',1))" class="btn btn-success mt-3"> Kill {{g.split('?',1)}}</button> {{g}}
+
+        </pre>
+
+    </div>
+  </div>
+
+
+</div>

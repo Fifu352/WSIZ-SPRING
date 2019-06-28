@@ -1,0 +1,95 @@
+<div class="row mt-2">
+    <div class="col-md-4">
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">Klucz</div>
+            <div class="card-body form-group">
+                <input [(ngModel)]="user" class="form-control" type="text">
+                <input [(ngModel)]="adminpass" class="form-control mt-1" type="password">
+
+            </div>
+        </div>
+        <div class="card text-white bg-dark mb-3">
+            <pre class=" ml-3 text-white bg-dark mb-3 mt-3"> Date: </pre>
+            <form class="form-inline ">
+
+                <div class="form-group">
+
+
+                    <div class="input-group">
+                        <input class="form-control ml-3" placeholder="yyyy-mm-dd"
+                               name="dp" [(ngModel)]="date" ngbDatepicker #d="ngbDatepicker">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <hr/>
+            <pre class="ml-3 text-white bg-dark mb-3 "> Time: {{ model | json }}</pre>
+            <ngb-timepicker class="ml-3" [(ngModel)]="time"></ngb-timepicker>
+            <hr>
+
+        </div>
+        <div class="card text-white bg-dark mb-3 ">
+            <div class="card-header">Komendy</div>
+            <div class="card-body form-group">
+                <input [(ngModel)]="command" class="form-control" type="text">
+                <button (click)="save()" class="btn btn-success mt-3"> Run command</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">Schedules</div>
+            <div class="card-body text-white">
+              <div class="table-responsive text-white">
+                <table class="table text-white">
+                  <thead>
+                  <tr>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Day</th>
+                    <th>Hour</th>
+                    <th>Minute</th>
+                    <th>Command</th>
+                    <th>       </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let a of schedules">
+                    <td >{{a.year}}</td>
+                    <td>{{a.month}}</td>
+                    <td>{{a.day}}</td>
+                    <td>{{a.hour}}</td>
+                    <td>{{a.minute}}</td>
+                    <td>{{a.command}}</td>
+                    <td><button (click)="delete(a)" class="btn btn-danger mt-3"> Delete</button></td>
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+                <!--        </ng-container>-->
+                <!--          <pre class="text-white" *ngFor="let g of schedules">{{g.year}}{{g.month}}{{g.day}}{{g.hour}}{{g.minute}}{{g.command}}</pre>-->
+                <!--        </ng-container>-->
+
+            </div>
+        </div>
+      <div class="card text-white bg-dark mb-3">
+        <div class="card-header">Wynik</div>
+        <div class="card-body ">
+
+          <pre class="text-white" *ngFor="let g of output">{{g}}</pre>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+</div>
